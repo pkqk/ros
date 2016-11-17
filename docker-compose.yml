@@ -1,10 +1,14 @@
 version: "2"
 services:
   shell:
+    image: pkqk/rso
     build:
       context: .
       dockerfile: Dockerfile
     working_dir: /code
     volumes:
       - .:/code
+  make:
+    extends: shell
+    command: make iso
 

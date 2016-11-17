@@ -8,7 +8,8 @@ o_files := $(patsubst src/%.asm,build/%.o,$(asm_src))
 
 .PHONY: all clean iso
 
-all: $(iso)
+all:
+	docker-compose up make
 
 clean:
 	rm -fr build
